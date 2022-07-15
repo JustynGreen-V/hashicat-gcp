@@ -64,10 +64,7 @@ resource "google_compute_instance" "hashicat" {
     ssh-keys = "ubuntu:${chomp(tls_private_key.ssh-key.public_key_openssh)} terraform"
   }
 
-  tags = {
-    http-server = ""
-    department  = "devops"
-  }
+  tags = ["http-server", "department"]
 
   labels = {
     name = "hashicat"
